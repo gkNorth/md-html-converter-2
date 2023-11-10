@@ -12,7 +12,9 @@ export const metadata: Metadata = {
     'Markdown to HTML',
     'HTML to Markdown',
   ],
-  robots: 'index, follow',
+  robots: {
+    index: true,
+  },
 };
 
 export default function RootLayout({
