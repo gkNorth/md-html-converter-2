@@ -28,7 +28,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 # ビルドステージから必要なファイルをコピー
-COPY --from=build /usr/src/app/next ./next
+COPY --from=build /usr/src/app/.next ./.next
 COPY package.json yarn.lock ./
 
 # 本番用のnode_modulesをインストール
