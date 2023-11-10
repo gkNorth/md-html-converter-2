@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import Favicon from '/public/favicon.ico';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Markdown HTML Converter',
   description: 'Tools to convert between markdown and HTML',
-  icons: [{ rel: 'icon', url: Favicon.src }],
   keywords: [
     'Markdown',
     'HTML',
@@ -13,7 +12,6 @@ export const metadata: Metadata = {
     'Markdown to HTML',
     'HTML to Markdown',
   ],
-  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({
@@ -23,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body>{children}</body>
     </html>
   );
