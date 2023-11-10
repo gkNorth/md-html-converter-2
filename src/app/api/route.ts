@@ -39,7 +39,7 @@ const getMarkDownConvertedFromWebPage = async ({
         : puppeteer.executablePath(),
   });
   const page = await browser.newPage();
-  await page.goto(reqValues.url, { waitUntil: 'load' });
+  await page.goto(reqValues.url, { waitUntil: 'load', timeout: 0 });
   const html = await page.evaluate(() => document.documentElement.outerHTML)
   await browser.close();
 
