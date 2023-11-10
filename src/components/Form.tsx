@@ -31,7 +31,7 @@ export default function Form() {
     const reqValues = {
       url,
     };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
+    const res = await fetch('/api', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export default function Form() {
       htmlValue,
       isMdToHtml,
     };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
+    const res = await fetch('/api', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
