@@ -6,8 +6,9 @@ type PostButtonProps = {
 export default function PostButton({ handler, isConverting }: PostButtonProps) {
   return (
     <button
-      className="px-4 py-2 w-[64px] h-[48px] bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors"
+      className="px-4 py-2 w-[64px] h-[48px] bg-blue-500 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 transition-colors"
       onClick={handler}
+      disabled={isConverting}
     >
       {isConverting ? (
         <div className="flex justify-center" aria-label="読み込み中">
