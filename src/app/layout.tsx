@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import './globals.css';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Markdown HTML Converter',
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <GoogleAnalytics />
+        <Suspense fallback={<></>}>
+          <GoogleAnalytics />
+        </Suspense>
       </head>
       <body>{children}</body>
     </html>
