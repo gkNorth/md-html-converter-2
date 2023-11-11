@@ -10,6 +10,7 @@ export default function Form() {
   const [url, setUrl] = useState('');
   const [isMdToHtml, setIsMdToHtml] = useState(false);
   const [isUrl, setIsUrl] = useState(false);
+  const [isConverting, setIsConverting] = useState(false);
 
   const handleMdToHtml = () => {
     setIsMdToHtml((isMdToHtml) => !isMdToHtml);
@@ -28,6 +29,7 @@ export default function Form() {
   };
 
   const postUrl = async () => {
+    setIsConverting(true);
     const reqValues = {
       url,
     };
@@ -40,9 +42,11 @@ export default function Form() {
     });
     const md = await res.text();
     setMdValue(md);
+    setIsConverting(false);
   };
 
   const postHtmlValue = async () => {
+    setIsConverting(true);
     const reqValues = {
       htmlValue,
       isMdToHtml,
@@ -56,6 +60,7 @@ export default function Form() {
     });
     const md = await res.json();
     setMdValue(md);
+    setIsConverting(false);
   };
 
   return (
@@ -94,7 +99,7 @@ export default function Form() {
       <div className="flex justify-around">
         {!!isUrl ? (
           <>
-            <PostButton handler={postUrl} />
+            <PostButton handler={postUrl} isConverting={isConverting} />
           </>
         ) : (
           <>
@@ -103,7 +108,7 @@ export default function Form() {
               value={isMdToHtml}
               handler={handleMdToHtml}
             />
-            <PostButton handler={postHtmlValue} />
+            <PostButton handler={postHtmlValue} isConverting={isConverting} />
           </>
         )}
       </div>
