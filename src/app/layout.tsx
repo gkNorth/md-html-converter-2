@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 export const metadata: Metadata = {
   title: 'Markdown HTML Converter',
   description:
-    '手軽にMarkdownとHTMLを相互変換できる無料Webサービス。コーディング不要で簡単に使えます。, Tools to convert between markdown and HTML - Free Online Tool',
+    '手軽にMarkdownとHTMLを相互変換できる無料Webサービス。コーディング不要で簡単に使えます。MarkdownをHTMLに変換、HTMLをMarkdownに変換も可能。Tools to convert between markdown and HTML - Free Online Tool',
   keywords: [
     'Markdown',
     'HTML',
@@ -18,7 +18,9 @@ export const metadata: Metadata = {
     '変換サイト',
     '無料',
     'HTMLからMarkdown',
+    'HTMLをMarkdownに変換',
     'MarkdownからHTML',
+    'MarkdownをHTMLに変換',
     'コンバータ',
     'webサービス',
   ],
